@@ -28,7 +28,7 @@
   <meta name="auth_endpoint" content="{{ \Coreproc\NovaEcho\NovaEcho::config('auth_endpoint') }}">
 @endif
 
-@if(method_exists(request()->user(), 'receivesBroadcastNotificationsOn'))
+@if(!empty(request()->user()) && method_exists(request()->user(), 'receivesBroadcastNotificationsOn'))
   <meta name="user_private_channel" content="{{ request()->user()->receivesBroadcastNotificationsOn() }}">
 @else
   <meta name="user_private_channel" content="{{ str_replace('\\', '.', get_class(request()->user())).'.'.request()->user()->id }}">
