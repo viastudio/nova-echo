@@ -1,5 +1,5 @@
 {
-    "name": "coreproc/nova-echo",
+    "name": "via/nova-echo",
     "description": "Adds Laravel Echo with your broadcast configuration to your Laravel Nova app",
     "keywords": [
         "laravel",
