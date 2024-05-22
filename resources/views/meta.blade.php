@@ -30,6 +30,6 @@
 
 @if(!empty(request()->user()) && method_exists(request()->user(), 'receivesBroadcastNotificationsOn'))
   <meta name="user_private_channel" content="{{ request()->user()->receivesBroadcastNotificationsOn() }}">
-@else
+@elseif (!empty(request()->user()))
   <meta name="user_private_channel" content="{{ str_replace('\\', '.', get_class(request()->user())).'.'.request()->user()->id }}">
 @endif
